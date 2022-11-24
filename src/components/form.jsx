@@ -3,11 +3,20 @@ import "../App.css";
 
 function FormSpace() {
   const [name, setName] = useState("");
-  
+  const [rating, setRating] = useState("10");
+  const [comment, setComment] = useState("")
+
   const submitHandler = (e) => {
     e.preventDefault();
     setName("");
+    if (Number(rating) <= 6 && comment.length <= 10) {
+        alert("Invalid Inputs")
+        return;
+    }
     console.log("Submitted Successfully");
+    setName("");
+    setRating("10");
+    setComment("")
   };
   return (
     <div className="App">
@@ -40,8 +49,13 @@ function FormSpace() {
               min="0"
               max="10"
               value={rating}
-              onChange={(e) => setScore(e.target.value)}
+              onChange={(e) => setRating(e.target.value)}
             ></input>
+          </div>
+          <div className="Field">
+            <label>Gives us your Feedback</label>
+            <textarea value={comment}
+            onChange={(e) => setComment(e.target.value)} />
           </div>
           <button
             disabled={!name}
