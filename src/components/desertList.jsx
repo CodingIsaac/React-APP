@@ -13,7 +13,7 @@ const DessertsList = (props) => {
           </li> 
         ); 
       }); 
-    return <ul>{lowCaloriesDesserts}</ul>; 
+    return <ul key={dessert}>{lowCaloriesDesserts}</ul>; 
    
    }
    export default DessertsList; 
