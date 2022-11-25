@@ -1,6 +1,6 @@
-import './App.css'; 
+import '../App.css'; 
 import {useState} from "react"; 
-import {validateEmail} from "../src/utils"; 
+import {validateEmail} from "../components/utils"; 
  
 const PasswordErrorMessage = () => { 
  return ( 
@@ -8,7 +8,7 @@ const PasswordErrorMessage = () => {
  ); 
 }; 
  
-function App() { 
+function Register() { 
  const [firstName, setFirstName] = useState(""); 
  const [lastName, setLastName] = useState(""); 
  const [email, setEmail] = useState(""); 
@@ -121,4 +121,4 @@ function App() {
  ); 
 } 
 
-export default App; 
+export default Register; 
