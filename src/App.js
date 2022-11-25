@@ -12,6 +12,7 @@ class App extends Component {
       { id: 4, value: 0 },
     ],
   };
+ 
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -19,7 +20,15 @@ class App extends Component {
     counters[index].value++;
     this.setState({ counters });
   };
-  handleDecrement = (counter) => {};
+
+  handleDecrement = counter => {
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].value--;
+    this.setState({ counters });
+  };
+
   handleReset = () => {
     this.state.counters.map((c) => {
       c.value = 0;
@@ -27,6 +36,7 @@ class App extends Component {
     });
     this.setState({});
   };
+
   handleDelete = (counterId) => {
     const counters = this.state.counters.filter((c) => c.id !== counterId);
     this.setState({ counters });
