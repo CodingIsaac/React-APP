@@ -1,20 +1,19 @@
-import React, { Component, Fragment } from "react";
+import React, {  Fragment } from "react";
 
-class NavBar extends Component {
-  render() {
+const NavBar = ({totalCounters}) => {
     return (
       <Fragment>
         <nav className="navbar navbar-light bg-light">
           <a className="narbar-brand" href="#">
-            Navbar{""}
+            Navbar {""}
             <span className="badge badge-pill badge-secondary">
-              {this.props.totalCounters}
+              {totalCounters}
             </span>
           </a>
         </nav>
       </Fragment>
     );
-  }
-}
+    };
+
 
 export default NavBar;
